@@ -11,8 +11,7 @@ public class Hospital {
     private List<Doctor> doctors;
     private List<String> services;
 
-    public Hospital(int id, String name, String username, String password, List<Doctor> doctors, List<String> services) {
-        this.id = id;
+    public Hospital(String name, String username, String password, List<Doctor> doctors, List<String> services) {
         this.name = name;
         this.username = username;
         this.password = password;

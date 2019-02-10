@@ -3,15 +3,14 @@ package com.hospital.entities;
 public class Patient {
 
     private int id;
-    private String name;
+    private String firstName;
     private String lastName;
     private String userName;
     private String email;
     private String password;
 
-    public Patient(int id, String name, String lastName, String userName, String email, String password) {
-        this.id = id;
-        this.name = name;
+    public Patient(String firstName, String lastName, String userName, String email, String password) {
+        this.firstName = firstName;
         this.lastName = lastName;
         this.userName = userName;
         this.email = email;
@@ -27,11 +26,11 @@ public class Patient {
     }
 
     public String getName() {
-        return name;
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getLastName() {
