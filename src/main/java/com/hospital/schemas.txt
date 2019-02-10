@@ -1,0 +1,48 @@
+Doctor {
+	id,
+	firstName,
+	lastName,
+	specialization,
+	hostpialId
+}
+
+Patient {
+	id,
+	firstName,
+	lastName,
+	username,
+	password
+}
+
+Hospital {
+    id,
+    name
+}
+
+Appointment {
+	id,
+	hospitalId,
+	doctorId,
+	patientId,
+	startDateTime,
+	endDateTime
+}
+
+TimeSlots {
+	id,
+	doctorid,
+	mondayStartTime
+	tuesdayStartTime
+	wednesdayStartTime
+	thursdayStartTime
+	fridayStartTime
+	saturdayStartTime
+	sundayStartTime
+	mondayEndTime
+	tuesdayEndTime
+	wednesdayEndTime
+	thursdayEndTime
+	fridayEndTime
+	saturdayEndTime
+	sundayEndTime
+}
