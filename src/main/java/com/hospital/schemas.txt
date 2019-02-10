@@ -4,7 +4,7 @@ Doctor {
 	lastName,
 	email
 	specialization,
-	hostpialId
+	hospitalId
 }
 
 Patient {

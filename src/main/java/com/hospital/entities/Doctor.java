@@ -5,20 +5,16 @@ public class Doctor {
    private int id;
    private String firstName;
    private String lastName;
-   private String specialization;
+   private Specialization specialization;
    private String email;
-   private int hostpialId;
+   private Long hospitalId;
 
-   public Doctor(String firstName, String lastName, String specialization, String email, int hostpialId) {
+   public Doctor(String firstName, String lastName, Specialization specialization, String email, Long hospitalId) {
       this.firstName = firstName;
       this.lastName = lastName;
       this.specialization = specialization;
       this.email = email;
-      this.hostpialId = hostpialId;
-   }
-
-   public void setId(int id) {
-      this.id = id;
+      this.hospitalId = hospitalId;
    }
 
    public void setFirstName(String firstName) {
@@ -29,7 +25,7 @@ public class Doctor {
       this.lastName = lastName;
    }
 
-   public void setSpecialization(String specialization) {
+   public void setSpecialization(Specialization specialization) {
       this.specialization = specialization;
    }
 
@@ -37,8 +33,8 @@ public class Doctor {
       this.email = email;
    }
 
-   public void setHostpialId(int hostpialId) {
-      this.hostpialId = hostpialId;
+   public void setHospitalId(Long hospitalId) {
+      this.hospitalId = hospitalId;
    }
 
    public int getId() {
@@ -53,7 +49,7 @@ public class Doctor {
       return lastName;
    }
 
-   public String getSpecialization() {
+   public Specialization getSpecialization() {
       return specialization;
    }
 
@@ -61,15 +57,8 @@ public class Doctor {
       return email;
    }
 
-   public int getHostpialId() {
-      return hostpialId;
+   public Long getHospitalId() {
+      return hospitalId;
    }
-
-
-
-
-
-
-
 
 }
