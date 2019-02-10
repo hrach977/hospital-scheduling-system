@@ -2,6 +2,7 @@ Doctor {
 	id,
 	firstName,
 	lastName,
+	email
 	specialization,
 	hostpialId
 }
@@ -11,12 +12,15 @@ Patient {
 	firstName,
 	lastName,
 	username,
-	password
+	password,
+	email
 }
 
 Hospital {
     id,
-    name
+    name,
+    userName,
+    password
 }
 
 Appointment {
