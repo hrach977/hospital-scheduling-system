@@ -34,7 +34,7 @@ Appointment {
 
 TimeSlots {
 	id,
-	doctorid,
+	doctorId,
 	mondayStartTime
 	tuesdayStartTime
 	wednesdayStartTime
