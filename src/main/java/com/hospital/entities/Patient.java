@@ -8,8 +8,15 @@ public class Patient {
     private String userName;
     private String email;
     private String password;
-//    private String passwordConfirmation;
 
+    public Patient(int id, String name, String lastName, String userName, String email, String password) {
+        this.id = id;
+        this.name = name;
+        this.lastName = lastName;
+        this.userName = userName;
+        this.email = email;
+        this.password = password;
+    }
 
     public int getId() {
         return id;
