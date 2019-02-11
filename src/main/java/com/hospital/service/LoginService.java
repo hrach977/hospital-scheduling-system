@@ -55,11 +55,15 @@ public class LoginService {
             e.printStackTrace();
         }
         System.out.println(storedPassword);
+
+        if (password.equals(storedPassword)) { //check after encryption
+            System.out.println("Logged in successfully");
+        }
     }
 
     public static void main(String[] args) {
         String username = "user";
-        String password = "user";
+        String password = "password";
         login(username, password, Patient.class);
     }
 }
