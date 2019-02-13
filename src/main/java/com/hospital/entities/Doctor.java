@@ -7,13 +7,15 @@ public class Doctor {
    private String lastName;
    private Specialization specialization;
    private String email;
+   private String phoneNumber;
    private Long hospitalId;
 
-   public Doctor(String firstName, String lastName, Specialization specialization, String email, Long hospitalId) {
+   public Doctor(String firstName, String lastName, Specialization specialization, String email, String phoneNumber, Long hospitalId) {
       this.firstName = firstName;
       this.lastName = lastName;
       this.specialization = specialization;
       this.email = email;
+      this.phoneNumber = phoneNumber;
       this.hospitalId = hospitalId;
    }
 
@@ -55,6 +57,14 @@ public class Doctor {
 
    public String getEmail() {
       return email;
+   }
+
+   public void setPhoneNumber(String phoneNumber) {
+      this.phoneNumber = phoneNumber;
+   }
+
+   public String getPhoneNumber() {
+      return phoneNumber;
    }
 
    public Long getHospitalId() {
