@@ -32,21 +32,28 @@ Appointment {
 	endDateTime
 }
 
-TimeSlots {
-	id,
-	doctorId,
-	mondayStartTime
-	tuesdayStartTime
-	wednesdayStartTime
-	thursdayStartTime
-	fridayStartTime
-	saturdayStartTime
-	sundayStartTime
-	mondayEndTime
-	tuesdayEndTime
-	wednesdayEndTime
-	thursdayEndTime
-	fridayEndTime
-	saturdayEndTime
-	sundayEndTime
+TimeSlot {
+    doctorId,
+    startTimestamp,
+    endTimestamp,
+    boolean
+}
+
+//TimeSlots {
+//	id,
+//	doctorId,
+//	mondayStartTime
+//	tuesdayStartTime
+//	wednesdayStartTime
+//	thursdayStartTime
+//	fridayStartTime
+//	saturdayStartTime
+//	sundayStartTime
+//	mondayEndTime
+//	tuesdayEndTime
+//	wednesdayEndTime
+//	thursdayEndTime
+//	fridayEndTime
+//	saturdayEndTime
+//	sundayEndTime
 }
