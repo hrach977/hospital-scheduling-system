@@ -17,9 +17,8 @@ public class Controller {
     public String indexPatient() {
         System.out.println("creating the patient");
         Patient patient = new Patient();
-        patient.setUserName("hivand");
+        patient.setUserName("urishHivand");
         patient.setFirstName("pacient");
-        patient.setUserName("hivandyan");
         patient.setEmail("hivand@gmail.com");
         patient.setPassword("qwerty");
         System.out.println(patient);
