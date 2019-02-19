@@ -37,4 +37,8 @@ public class DoctorRepositoryImpl implements DoctorRepository {
    public Doctor findById(Long id) {
       return doctorRepository.findById(id);
    }
+
+   public Doctor save(Doctor doctor) {
+      return doctorRepository.save(doctor);
+   }
 }

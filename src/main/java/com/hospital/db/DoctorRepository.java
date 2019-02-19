@@ -7,6 +7,8 @@ import org.springframework.stereotype.Repository;
 
 import javax.print.Doc;
 import java.util.List;
+
+
 @Repository
 public interface DoctorRepository {
 
@@ -16,5 +18,6 @@ public interface DoctorRepository {
    Doctor findByEmail(String email);
    void delete(Doctor doctor);
    Doctor findById(Long id);
+   Doctor save(Doctor doctor);
 
 }

@@ -28,13 +28,16 @@ public class DoctorService {
         return doctor;
     }
 
-//    public Doctor createDoctor(String username, String firstName, String lastName, Specialization specialization, String email, String phoneNumber,){
-////        return doctorRepository.save(doctor);
-//        Doctor doctor = new Doctor(username, firstName, lastName, specialization, email, phoneNumber);
+//    public Doctor createDoctor(String username, String firstName, String lastName, Specialization specialization, String email, String phoneNumber, Long hospitalId){
 //
-//
-//
+//        Doctor doctor = new Doctor(username, firstName, lastName, specialization, email, phoneNumber,hospitalId);
+//        return doctorRepository.save(doctor);
 //    }
+    public Doctor createDoctor(Doctor doctor){
+
+        Doctor newDoctor = new Doctor(doctor.getUsername(), doctor.getFirstName(), doctor.getLastName(), doctor.getSpecialization(), doctor.getEmail(), doctor.getPhoneNumber(),doctor.getHospitalId());
+        return doctorRepository.save(doctor);
+    }
 
     public boolean checkUsernameExists(String username) {
         if (null != doctorRepository.findByUsername(username)) {
@@ -42,6 +45,8 @@ public class DoctorService {
         }
         return false;
     }
+
+
     public boolean checkUserExists(String username, String email){
         if (checkUsernameExists(username) || checkEmailExists(username)) {
             return true;
