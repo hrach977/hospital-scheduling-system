@@ -3,6 +3,7 @@ package com.hospital.entities;
 import javax.persistence.*;
 
 @Entity
+//@TableGenerator()
 @Table(name = "patients")
 public class Patient {
 

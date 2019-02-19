@@ -3,10 +3,10 @@ package com.hospital.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "doctos")
+@Table(name = "doctors")
 public class Doctor {
    @Id
-   @GeneratedValue(strategy = GenerationType.TABLE)
+   @GeneratedValue
    private Long id;
 
    @Column(name = "user_name",nullable = false, unique = true)
@@ -23,14 +23,20 @@ public class Doctor {
    private String phoneNumber;
    @Column(name = "hospitaId")
    private Long hospitalId;
+   @Column(name = "password",nullable = false)
+   private String password;
 
-   public Doctor(String username, String firstName, String lastName, Specialization specialization, String email, String phoneNumber, Long hospitalId) {
+
+   public Doctor(){}
+
+   public Doctor(String username, String firstName, String lastName, Specialization specialization, String email, String phoneNumber,String password, Long hospitalId) {
       this.username = username;
       this.firstName = firstName;
       this.lastName = lastName;
       this.specialization = specialization;
       this.email = email;
       this.phoneNumber = phoneNumber;
+      this.password = password;
       this.hospitalId = hospitalId;
    }
 
@@ -79,6 +85,14 @@ public class Doctor {
 
    public String getEmail() {
       return email;
+   }
+
+   public void setPassword(String password) {
+      this.password = password;
+   }
+
+   public String getPassword() {
+      return password;
    }
 
    public void setPhoneNumber(String phoneNumber) {
