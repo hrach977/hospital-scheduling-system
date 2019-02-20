@@ -11,13 +11,13 @@ import java.util.List;
 
 @Repository
 public interface DoctorRepository {
-
+//
    List<Doctor> findBySpecialization(Specialization specialization);
-   Doctor findByUsername(String username);
-   List<Doctor> findAll();
-   Doctor findByEmail(String email);
-   void delete(Doctor doctor);
-   Doctor findById(Long id);
-   Doctor save(Doctor doctor);
+//   Doctor findByUsername(String username);
+//   List<Doctor> findAll();
+//   Doctor findByEmail(String email);
+//   void delete(Doctor doctor);
+//   Doctor findById(Long id);
+//   Doctor save(Doctor doctor);
 
 }
