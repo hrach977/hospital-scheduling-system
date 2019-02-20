@@ -49,6 +49,10 @@ public class DoctorService {
         return doctorRepository.findByHospitalId(hospitalId);
     }
 
+    public Doctor findByUsername(String username){
+        return doctorRepository.findByUsername(username);
+    }
+
 
     public boolean checkUserExists(String username, String email){
         if (checkUsernameExists(username) || checkEmailExists(username)) {

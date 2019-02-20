@@ -16,29 +16,29 @@ public class DoctorRepositoryImpl implements DoctorRepository {
    public List<Doctor> findBySpecialization(Specialization specialization) {
       return doctorRepository.findBySpecialization(specialization);
    }
-//
-//   public Doctor findByUsername(String username) {
-//
-//      return doctorRepository.findByUsername(username);
-//   }
-//
-//   public List<Doctor> findAll() {
-//
-//      return doctorRepository.findAll();
-//   }
-//
-//   public Doctor findByEmail(String email) {
-//      return doctorRepository.findByEmail(email);
-//   }
-//   public void delete(Doctor doctor){
-//      doctorRepository.delete(doctor);
-//   }
-//
-//   public Doctor findById(Long id) {
-//      return doctorRepository.findById(id);
-//   }
 
-//   public Doctor save(Doctor doctor) {
-//      return doctorRepository.save(doctor);
-//   }
+   public Doctor findByUsername(String username) {
+
+      return doctorRepository.findByUsername(username);
+   }
+
+   public List<Doctor> findAll() {
+
+      return doctorRepository.findAll();
+   }
+
+   public Doctor findByEmail(String email) {
+      return doctorRepository.findByEmail(email);
+   }
+   public void delete(Doctor doctor){
+      doctorRepository.delete(doctor);
+   }
+
+   public Doctor findById(Long id) {
+      return doctorRepository.findById(id);
+   }
+
+   public Doctor save(Doctor doctor) {
+      return doctorRepository.save(doctor);
+   }
 }
