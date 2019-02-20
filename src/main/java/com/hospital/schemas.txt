@@ -4,7 +4,7 @@ Doctor {
 	lastName,
 	email,
 	specialization,
-	hospitalId
+	hospital
 }
 
 Patient {
@@ -25,7 +25,7 @@ Hospital {
 
 Appointment {
 	id,
-	hospitalId,
+	hospital,
 	doctorId,
 	patientId,
 	startDateTime,
