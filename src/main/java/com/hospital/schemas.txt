@@ -2,7 +2,7 @@ Doctor {
 	id,
 	firstName,
 	lastName,
-	email
+	email,
 	specialization,
 	hospital
 }
