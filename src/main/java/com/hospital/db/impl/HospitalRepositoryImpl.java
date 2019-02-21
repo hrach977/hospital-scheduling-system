@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository(value = "internal")
+@Repository(value = "internalHospital")
 public class HospitalRepositoryImpl implements HospitalRepository {
 
     @Autowired
