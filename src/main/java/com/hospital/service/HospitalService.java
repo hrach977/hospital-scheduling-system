@@ -29,4 +29,18 @@ public class HospitalService {
             return true;
         }
     }
+
+    @Transactional
+    public boolean logIn(String userName, String password) {
+        if (hospitalRepository.findByUsername(userName).size() == 0) {
+            System.out.println("Username is incorrect");
+            return false;
+        } else if (!hospitalRepository.findByUsername(userName).get(0).getPassword().equals(password)) {
+            System.out.println("Password is incorrect");
+            return false;
+        } else {
+            System.out.println("You have successfully logged in");
+            return true;
+        }
+    }
 }
