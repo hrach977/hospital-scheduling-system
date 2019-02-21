@@ -22,4 +22,9 @@ public class HospitalRepositoryImpl implements HospitalRepository {
     public List<Hospital> findByUsername(String userName) {
         return hospitalRepository.findByUsername(userName);
     }
+
+    @Override
+    public Hospital save(Hospital hospital) {
+        return hospitalRepository.save(hospital);
+    }
 }

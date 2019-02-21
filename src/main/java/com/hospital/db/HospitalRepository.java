@@ -8,4 +8,6 @@ public interface HospitalRepository {
     List<Hospital> findAll();
 
     List<Hospital> findByUsername(String userName);
+
+    Hospital save(Hospital hospital);
 }
