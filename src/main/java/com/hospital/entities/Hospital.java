@@ -1,22 +1,38 @@
 package com.hospital.entities;
 
-import java.util.List;
+import javax.persistence.*;
 
+@Entity
+@Table(name = "hospitals")
 public class Hospital {
 
+    @Id
+    @GeneratedValue
     private int id;
+    @Column(name = "name")
     private String name;
+    @Column(name = "username")
     private String username;
+    @Column(name = "password")
     private String password;
-    private List<Doctor> doctors;
-    private List<String> services;
+    @Column(name = "email")
+    private String email;
+    @Column(name = "phoneNumber")
+    private String phoneNumber;
+    @Column(name = "address")
+    private String address;
 
-    public Hospital(String name, String username, String password, List<Doctor> doctors, List<String> services) {
+    public Hospital() {
+
+    }
+
+    public Hospital(String name, String username, String password, String email, String phoneNumber, String address) {
         this.name = name;
         this.username = username;
         this.password = password;
-        this.doctors = doctors;
-        this.services = services;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
     }
 
     public int getId() {
@@ -51,19 +67,27 @@ public class Hospital {
         this.password = password;
     }
 
-    public List<Doctor> getDoctors() {
-        return doctors;
+    public String getEmail() {
+        return email;
     }
 
-    public void setDoctors(List<Doctor> doctors) {
-        this.doctors = doctors;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public List<String> getServices() {
-        return services;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setServices(List<String> services) {
-        this.services = services;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 }
