@@ -5,6 +5,8 @@ import com.hospital.entities.Patient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository(value = "internal")
 public class PatientRepositoryImpl implements PatientRepository {
 
@@ -14,5 +16,10 @@ public class PatientRepositoryImpl implements PatientRepository {
     @Override
     public Patient save(Patient patient) {
        return patientRepository.save(patient);
+    }
+
+    @Override
+    public List<Patient> findByUserName(String userName) {
+        return patientRepository.findByUserName(userName);
     }
 }
