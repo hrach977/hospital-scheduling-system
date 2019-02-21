@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository(value = "internal")
+@Repository(value = "internalHospital")
 public class HospitalRepositoryImpl implements HospitalRepository {
 
     @Autowired
@@ -21,5 +21,10 @@ public class HospitalRepositoryImpl implements HospitalRepository {
     @Override
     public List<Hospital> findByUsername(String userName) {
         return hospitalRepository.findByUsername(userName);
+    }
+
+    @Override
+    public Hospital save(Hospital hospital) {
+        return hospitalRepository.save(hospital);
     }
 }
