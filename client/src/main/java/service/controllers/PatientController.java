@@ -13,6 +13,7 @@ public class PatientController {
 
     @PostMapping("/index")
     public String indexPatient() {
+        System.out.println("inside index");
         return null;
     }
 }
