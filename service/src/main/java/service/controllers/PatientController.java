@@ -25,7 +25,7 @@ public class PatientController {
     public String indexPatient() {
         System.out.println("inside index");
         Patient modular = new Patient();
-        modular.setUsername("modularPatient2");
+        modular.setUsername("modularPatient3");
         patientRepository.save(modular);
         return "Hello From Modular Project";
     }
