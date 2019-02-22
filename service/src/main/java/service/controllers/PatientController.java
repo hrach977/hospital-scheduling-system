@@ -1,6 +1,7 @@
 package service.controllers;
 
 import commons.db.jpa.PatientRepository;
+import commons.entities.Patient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,6 +21,9 @@ public class PatientController {
     //@ResponseBody
     public String indexPatient() {
         System.out.println("inside index");
+        Patient modular = new Patient();
+        modular.setUsername("modularPatient");
+        patientRepository.save(modular);
         return "Hello From Modular Project";
     }
 }
