@@ -7,83 +7,127 @@
     <groupId>org.team3</groupId>
     <artifactId>hospital-scheduling-system</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>6</source>
-                    <target>6</target>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
 
-    <properties>
-        <spring.framework>4.3.0.RELEASE</spring.framework>
-        <!--<postgres.version>42.1.4</postgres.version>-->
-        <serializer.version>2.8.1</serializer.version>
-        <spring.data>1.3.4.RELEASE</spring.data>
-        <hibernate.manager>4.2.5.Final</hibernate.manager>
-    </properties>
+    <modules>
+        <module>client</module>
+        <module>common</module>
+        <module>service</module>
+    </modules>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.3.RELEASE</version>
+        <!--<type>pom</type>-->
+    </parent>
 
     <dependencies>
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-core</artifactId>
-            <version>${spring.framework}</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context</artifactId>
-            <version>${spring.framework}</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework.data</groupId>
-            <artifactId>spring-data-jpa</artifactId>
-            <version>${spring.data}</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-webmvc</artifactId>
-            <version>${spring.framework}</version>
-        </dependency>
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.15</version>
-        </dependency>
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-entitymanager</artifactId>
-            <version>${hibernate.manager}</version>
-        </dependency>
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>4.0.0</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>${serializer.version}</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
     </dependencies>
 
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
     <!--<build>-->
         <!--<plugins>-->
             <!--<plugin>-->
                 <!--<groupId>org.apache.maven.plugins</groupId>-->
-                <!--<artifactId>maven-war-plugin</artifactId>-->
-                <!--<version>3.2.2</version>-->
+                <!--<artifactId>maven-compiler-plugin</artifactId>-->
                 <!--<configuration>-->
-                    <!--<webappDirectory>/sample/servlet/container/deploy/directory</webappDirectory>-->
+                    <!--<source>6</source>-->
+                    <!--<target>6</target>-->
                 <!--</configuration>-->
             <!--</plugin>-->
         <!--</plugins>-->
     <!--</build>-->
-    
+    <!--<packaging>war</packaging>-->
+
+    <!--<properties>-->
+        <!--<spring.framework>4.3.0.RELEASE</spring.framework>-->
+        <!--&lt;!&ndash;<postgres.version>42.1.4</postgres.version>&ndash;&gt;-->
+        <!--<serializer.version>2.8.1</serializer.version>-->
+        <!--<spring.data>1.3.4.RELEASE</spring.data>-->
+        <!--<hibernate.manager>4.2.5.Final</hibernate.manager>-->
+    <!--</properties>-->
+
+    <!--<dependencies>-->
+        <!--<dependency>-->
+            <!--<groupId>org.springframework</groupId>-->
+            <!--<artifactId>spring-core</artifactId>-->
+            <!--<version>${spring.framework}</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>org.springframework</groupId>-->
+            <!--<artifactId>spring-context</artifactId>-->
+            <!--<version>${spring.framework}</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.data</groupId>-->
+            <!--<artifactId>spring-data-jpa</artifactId>-->
+            <!--<version>${spring.data}</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>org.springframework</groupId>-->
+            <!--<artifactId>spring-webmvc</artifactId>-->
+            <!--<version>${spring.framework}</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>mysql</groupId>-->
+            <!--<artifactId>mysql-connector-java</artifactId>-->
+            <!--<version>8.0.15</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>org.hibernate</groupId>-->
+            <!--<artifactId>hibernate-entitymanager</artifactId>-->
+            <!--<version>${hibernate.manager}</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>javax.servlet</groupId>-->
+            <!--<artifactId>javax.servlet-api</artifactId>-->
+            <!--<version>4.0.0</version>-->
+            <!--<scope>provided</scope>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>com.fasterxml.jackson.core</groupId>-->
+            <!--<artifactId>jackson-databind</artifactId>-->
+            <!--<version>${serializer.version}</version>-->
+        <!--</dependency>-->
+    <!--</dependencies>-->
+
+    <!--&lt;!&ndash;<build>&ndash;&gt;-->
+        <!--&lt;!&ndash;<plugins>&ndash;&gt;-->
+            <!--&lt;!&ndash;<plugin>&ndash;&gt;-->
+                <!--&lt;!&ndash;<groupId>org.apache.maven.plugins</groupId>&ndash;&gt;-->
+                <!--&lt;!&ndash;<artifactId>maven-war-plugin</artifactId>&ndash;&gt;-->
+                <!--&lt;!&ndash;<version>3.2.2</version>&ndash;&gt;-->
+                <!--&lt;!&ndash;<configuration>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<webappDirectory>/sample/servlet/container/deploy/directory</webappDirectory>&ndash;&gt;-->
+                <!--&lt;!&ndash;</configuration>&ndash;&gt;-->
+            <!--&lt;!&ndash;</plugin>&ndash;&gt;-->
+        <!--&lt;!&ndash;</plugins>&ndash;&gt;-->
+    <!--&lt;!&ndash;</build>&ndash;&gt;-->
+    <!---->
 </project>
