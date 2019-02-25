@@ -1,6 +1,8 @@
 package commons.entities;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "patients")
@@ -8,12 +10,25 @@ public class Patient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotNull
+    @NotEmpty
     private String username;
+    @NotEmpty
+    @NotNull
     @Column(name = "first_name")
     private String firstName;
+    @NotEmpty
+    @NotNull
     @Column(name = "last_name")
     private String lastName;
+    @NotEmpty
+    @NotNull
     private String password;
+    @NotNull
+    @NotEmpty
+    private String passwordConfirmation;
+    @NotEmpty
+    @NotNull
     private String email;
 
     public Patient() {}
@@ -24,6 +39,14 @@ public class Patient {
         this.lastName = lastName;
         this.password = password;
         this.email = email;
+    }
+
+    public String getPasswordConfirmation() {
+        return passwordConfirmation;
+    }
+
+    public void setPasswordConfirmation(String passwordConfirmation) {
+        this.passwordConfirmation = passwordConfirmation;
     }
 
     public Long getId() {
