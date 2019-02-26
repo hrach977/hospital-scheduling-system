@@ -11,13 +11,13 @@ import org.springframework.web.client.RestTemplate;
 
 //@RestController
 @Controller
-@RequestMapping("hospitals")
+@RequestMapping("/hospitals")
 public class HospitalController {
 
-    @Autowired
+    //@Autowired
     private RestTemplate restTemplate;
 
-    @RequestMapping("/welcome")
+    @RequestMapping(value = "/welcome", method = RequestMethod.GET)
     public String loginMessage(){
         return "welcome";
     }
