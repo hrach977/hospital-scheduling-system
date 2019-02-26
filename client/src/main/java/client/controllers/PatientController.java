@@ -4,7 +4,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import commons.entities.Patient;
 import okhttp3.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -13,6 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.validation.Valid;
 import java.io.IOException;
 
 
@@ -40,7 +40,7 @@ public class PatientController {
 //    @RequestParam String lastName, @RequestParam String password,
 //    @RequestParam String passwordConfirmation, @RequestParam String email)
     @PostMapping("/signUp")
-    public String showLoginPage(@ModelAttribute("patientForm") Patient patient, BindingResult bindingResult, Model model) throws IOException {
+    public String showLoginPage(@ModelAttribute("patientForm") @Valid Patient patient, BindingResult bindingResult, Model model) throws IOException {
         if (bindingResult.hasErrors()) {
             return "signUp";
         }
@@ -83,18 +83,29 @@ public class PatientController {
         try (Response response = http.newCall(request).execute()) {
             if (response.code() == 200) {
 //                if (!response.body().equals("null")) {
-                String s = response.body().string();
-                ResponseEntity responseEntity = mapper.readValue(s, ResponseEntity.class);
-                model.addAttribute("message", responseEntity);
-                return "logIn";
+//                String s = response.body().string();
+//                ResponseEntity responseEntity = mapper.readValue(s, ResponseEntity.class);
+//                model.addAttribute("message", responseEntity);
+                return "login";
             } else
-                model.addAttribute("errorMessage", response.body().string());
+                model.addAttribute("errorMessage", response.message());
             return "signUp";
 //            } else {
 //                throw new RuntimeException("unexpected response from backend : request = " + request + ", response = " + response);
 //            }
         }
 
+    }
+
+    @GetMapping("/login")
+    public String login(Model model, String error, String logout) {
+        if (error != null)
+            model.addAttribute("error", "Your username and password is invalid.");
+
+        if (logout != null)
+            model.addAttribute("message", "You have been logged out successfully.");
+
+        return "login";
     }
 
 }

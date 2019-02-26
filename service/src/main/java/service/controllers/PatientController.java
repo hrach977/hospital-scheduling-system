@@ -5,12 +5,14 @@ import commons.entities.Patient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
 import service.services.PatientService;
+
+import javax.validation.Valid;
 
 @RestController//(value = "/patients") //("patients")
 @RequestMapping//("/service/v1/patients")
@@ -37,11 +39,14 @@ public class PatientController {
     }
 
     @PostMapping("/signUp")
-    public ResponseEntity signUpPatient(@RequestParam String username, @RequestParam String firstName, @RequestParam String lastName,
-                                        @RequestParam String password, @RequestParam String passwordConfirmation, @RequestParam String email) {
+    public String signUpPatient(@RequestParam @Valid String username, @RequestParam @Valid String firstName,
+                                @RequestParam @Valid String lastName, @RequestParam @Valid String password,
+                                @RequestParam @Valid String passwordConfirmation, @RequestParam @Valid String email) {
         if (!patientService.signUp(username, firstName, lastName, password, passwordConfirmation, email)) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("This username is already used");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "This username already in use");
+//            ResponseEntity<>("This username already in use",HttpStatus.BAD_REQUEST);
         }
-        return ResponseEntity.status(HttpStatus.ACCEPTED).body("You have registered successfully");
+//        return new ResponseEntity<>("You have registered successfully",HttpStatus.OK);
+        return "";
     }
 }
