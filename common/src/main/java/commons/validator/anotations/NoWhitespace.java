@@ -1,7 +1,7 @@
-package service.validator.anotations;
+package commons.validator.anotations;
 
 
-import service.validator.EmailValidator;
+import commons.validator.ContainsWhitespaceValidator;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
@@ -14,11 +14,11 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 @Target({TYPE, FIELD, ANNOTATION_TYPE})
 @Retention(RUNTIME)
-@Constraint(validatedBy = EmailValidator.class)
+@Constraint(validatedBy = ContainsWhitespaceValidator.class)
 @Documented
-public @interface ValidEmail {
+public @interface NoWhitespace {
 
-    String message() default "Invalid email";
+    String message() default "Contains whitespace!";
 
     Class<?>[] groups() default {};
 

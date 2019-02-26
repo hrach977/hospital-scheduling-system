@@ -15,4 +15,9 @@ public class PatientRepositoryImpl implements PatientRepository {
     public Patient save(Patient patient) {
         return patientRepository.save(patient);
     }
+
+    @Override
+    public Patient findByUsername(String username) {
+        return patientRepository.findByUsername(username);
+    }
 }

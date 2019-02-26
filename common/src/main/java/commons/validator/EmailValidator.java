@@ -1,6 +1,6 @@
-package service.validator;
+package commons.validator;
 
-import service.validator.anotations.ValidEmail;
+import commons.validator.anotations.ValidEmail;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;

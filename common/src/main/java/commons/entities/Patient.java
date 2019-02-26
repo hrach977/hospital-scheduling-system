@@ -1,17 +1,23 @@
 package commons.entities;
 
+import commons.validator.anotations.NoWhitespace;
+import commons.validator.anotations.PasswordMatches;
+import commons.validator.anotations.ValidEmail;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "patients")
+@PasswordMatches
 public class Patient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @NotNull
     @NotEmpty
+    @NoWhitespace
     private String username;
     @NotEmpty
     @NotNull
@@ -23,21 +29,25 @@ public class Patient {
     private String lastName;
     @NotEmpty
     @NotNull
+    @NoWhitespace
     private String password;
-    @NotNull
-    @NotEmpty
+    @Transient
     private String passwordConfirmation;
+    @ValidEmail
     @NotEmpty
     @NotNull
     private String email;
 
     public Patient() {}
 
-    public Patient(String username, String firstName, String lastName, String password, String email) {
+    public Patient(@NotNull @NotEmpty String username, @NotEmpty @NotNull String firstName,
+                   @NotEmpty @NotNull String lastName, @NotEmpty @NotNull String password, String passwordConfirmation,
+                   @NotEmpty @NotNull String email) {
         this.username = username;
         this.firstName = firstName;
         this.lastName = lastName;
         this.password = password;
+        this.passwordConfirmation = passwordConfirmation;
         this.email = email;
     }
 
