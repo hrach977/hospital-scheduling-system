@@ -22,6 +22,11 @@ public class HospitalController {
         return "welcome";
     }
 
+    @RequestMapping(value = "/galust", method = RequestMethod.GET)
+    public String galustnMessage(){
+        return "galust.jsp";
+    }
+
     @GetMapping("/register")
     public String showRegistrationPage(ModelMap model) {
         return "registerHospital";
