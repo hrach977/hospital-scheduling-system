@@ -13,7 +13,7 @@ import service.services.HospitalService;
 @RestController
 @EnableJpaRepositories("common")
 //@ComponentScan("service.services")
-@RequestMapping("hospitals")
+@RequestMapping("api/hospitals")
 public class HospitalController {
 
 //    @Autowired
