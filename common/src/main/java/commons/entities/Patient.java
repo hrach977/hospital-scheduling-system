@@ -1,7 +1,6 @@
 package commons.entities;
 
 import commons.validator.anotations.NoWhitespace;
-import commons.validator.anotations.PasswordMatches;
 import commons.validator.anotations.ValidEmail;
 
 import javax.persistence.*;
@@ -10,7 +9,7 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "patients")
-@PasswordMatches
+//@PasswordMatches
 public class Patient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -38,6 +37,10 @@ public class Patient {
     @NotNull
     private String email;
 
+    @Column(name = "user_type", columnDefinition = "varchar(32) default 'USER'")
+    @Enumerated(EnumType.STRING)
+    private UserType userType;
+
     public Patient() {}
 
     public Patient(@NotNull @NotEmpty String username, @NotEmpty @NotNull String firstName,
@@ -57,6 +60,14 @@ public class Patient {
 
     public void setPasswordConfirmation(String passwordConfirmation) {
         this.passwordConfirmation = passwordConfirmation;
+    }
+
+    public UserType getUserType() {
+        return userType;
+    }
+
+    public void setUserType(UserType userType) {
+        this.userType = userType;
     }
 
     public Long getId() {

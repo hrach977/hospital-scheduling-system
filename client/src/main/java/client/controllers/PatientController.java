@@ -108,5 +108,10 @@ public class PatientController {
         return "login";
     }
 
+    @GetMapping({"/", "/welcome"})
+    public String welcome(Model model) {
+        return "welcome";
+    }
+
 }
 

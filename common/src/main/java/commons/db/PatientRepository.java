@@ -6,4 +6,5 @@ public interface PatientRepository {
     Patient save(Patient patient);
 
     Patient findByUsername(String username);
+
 }

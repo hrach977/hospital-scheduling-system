@@ -1,17 +1,21 @@
 <html>
-
-<head>
-    <title>Login page </title>
-</head>
-
+<head></head>
 <body>
-<font color="red">${errorMessage}</font>
-<form method="post">
-    Name : <input type="text" name="username"/>
-    Password : <input type="password" name="password"/>
-    <input type="submit"/>
+<h1>Login</h1>
+<form name='f' action="login" method='POST'>
+    <table>
+        <tr>
+            <td>User:</td>
+            <td><input type='text' name='username' value=''></td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td><input type='password' name='password'/></td>
+        </tr>
+        <tr>
+            <td><input name="submit" type="submit" value="submit"/></td>
+        </tr>
+    </table>
 </form>
 </body>
-
-
 </html>
