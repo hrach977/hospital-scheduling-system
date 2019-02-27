@@ -26,6 +26,7 @@ public class HospitalController {
     public String registerHospital(@RequestParam String name, @RequestParam String username,
                                    @RequestParam String password, @RequestParam String address,
                                    @RequestParam String email, @RequestParam String phone) {
+        System.out.println("got request from client");
         hospitalService.registerHospital(name, password, username, address, email, phone);
         return "Registered successfully";
     }

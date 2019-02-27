@@ -14,7 +14,7 @@ import org.springframework.web.client.RestTemplate;
 @RequestMapping("/hospitals")
 public class HospitalController {
 
-    //@Autowired
+    @Autowired
     private RestTemplate restTemplate;
 
     @RequestMapping(value = "/welcome", method = RequestMethod.GET)
@@ -65,7 +65,7 @@ public class HospitalController {
 
         ResponseEntity<String> responseEntity = restTemplate.postForEntity(url, request, String.class);
 
-        if (responseEntity.getStatusCode() == HttpStatus.OK) {
+        if (responseEntity.getStatusCode().equals(HttpStatus.OK)) {
             model.put("name", name);
 //            model.put("username", username);
 //            model.put("password", password);

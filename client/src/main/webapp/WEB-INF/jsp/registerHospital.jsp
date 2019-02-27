@@ -5,7 +5,7 @@
 </head>
 
 <body>
-<%--<h1>Register as a Hospital!</h1>--%>
+<h1>Register as a Hospital!</h1>
 <font color="red">${errorMessage}</font>
 <form method="post">
     Name : <input type="text" name="name"/>
